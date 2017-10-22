@@ -1,0 +1,32 @@
+{
+   "name": "pgAutomator",
+   "abstract": "Advanced job scheduling system for Postgres",
+   "description": "This is an extension which holds all the database logic for pgAutomator, the most advanced job scheduler for Postgres.",
+   "version": "0.0.1",
+   "maintainer": [
+      "Adam Brusselback <adambrusselback@gmail.com>"
+   ],
+   "license": "postgresql",
+   "resources": {
+      "bugtracker": {
+         "web": "https://github.com/Tostino/pgAutomator-extension/issues/"
+      },
+      "repository": {
+        "url":  "git://github.com/Tostino/pgAutomator-extension.git",
+        "web":  "https://github.com/Tostino/pgAutomator-extension/",
+        "type": "git"
+      }
+   },
+   "generated_by": "Adam Brusselback",
+   "meta-spec": {
+      "version": "1.0.0",
+      "url": "http://pgxn.org/meta/spec.txt"
+   },
+   "tags": [
+      "administration",
+      "maintenance",
+      "pgAutomator",
+      "plpgsql",
+      "cron"
+   ]
+}
