@@ -1,5 +1,5 @@
 EXTENSION = pgAutomator        # the extensions name
-DATA = pgAutomator--0.0.1.sql  # script files to install
+DATA = sql/pgAutomator--0.0.1.sql  # script files to install
 
 # postgres build stuff
 PG_CONFIG = pg_config

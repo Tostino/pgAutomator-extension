@@ -1,5 +1,3 @@
-\echo Use "CREATE EXTENSION pgAutomator" to load this file. \quit
-
 /*
 // pgAutomator - The most advanced PostgreSQL job scheduler.
 // 
@@ -9,10 +7,7 @@
 //
 */
 
-BEGIN TRANSACTION;
-
-
-CREATE SCHEMA pgautomator;
+CREATE SCHEMA  IF NOT EXISTS pgautomator;
 COMMENT ON SCHEMA pgautomator IS 'pgAutomator system tables';
 
 
@@ -37,7 +32,7 @@ CREATE TYPE pgautomator.schedule_type AS ENUM
   'ON_IDLE',
   'ON_TRIGGER_FILE');
   
-COMMENT ON TYPE pgautomator.schedule_type IS 'No support for ON_IDLE or ON_TRIGGER_FILE yet, will be supported in future version.'
+COMMENT ON TYPE pgautomator.schedule_type IS 'No support for ON_IDLE or ON_TRIGGER_FILE yet, will be supported in future version.';
 
 CREATE TYPE pgautomator.day_of_week AS ENUM
 ('SUNDAY',
@@ -1596,7 +1591,7 @@ RETURNING job_kill.job_id;
 
 $BODY$
 LANGUAGE sql VOLATILE;
-COMMENT ON FUNCTION pgautomator.kill_job(int) IS 'Gets jobs running on the agent which need to be killed and removes them from the table to be killed.';
+COMMENT ON FUNCTION pgautomator.get_killed_jobs(int) IS 'Gets jobs running on the agent which need to be killed and removes them from the table to be killed.';
 
 
 CREATE OR REPLACE FUNCTION pgautomator.zombie_killer(_agent_id int)
@@ -1738,5 +1733,3 @@ END;
 $BODY$
 LANGUAGE plpgsql VOLATILE;
 COMMENT ON FUNCTION pgautomator.register_agent(text) IS 'Create a new agent. Called by the agent itself when started.';
-
-COMMIT TRANSACTION;
