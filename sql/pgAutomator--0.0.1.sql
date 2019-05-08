@@ -86,7 +86,7 @@ COMMENT ON TABLE pgautomator.job_category IS 'Ways to categorize a Job.';
 INSERT INTO pgautomator.job_category (category) VALUES ('Routine Maintenance');
 INSERT INTO pgautomator.job_category (category) VALUES ('Data Import');
 INSERT INTO pgautomator.job_category (category) VALUES ('Data Export');
-INSERT INTO pgautomator.job_category (category) VALUES ('Data Summarisation');
+INSERT INTO pgautomator.job_category (category) VALUES ('Data Summarization');
 INSERT INTO pgautomator.job_category (category) VALUES ('Miscellaneous');
 
 
